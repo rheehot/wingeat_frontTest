@@ -27,10 +27,13 @@ const List = ({ changeCount }) => {
       document.documentElement.scrollHeight,
       document.body.scrollHeight,
     );
-    const scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+    // scrollTop은 소수점이 발생하여 내림 적용
+    const scrollTop = Math.ceil(Math.max(
+      document.documentElement.scrollTop,
+      document.body.scrollTop,
+    ));
     const { clientHeight } = document.documentElement;
-
-    if (scrollTop + clientHeight + 1 > scrollHeight) {
+    if (scrollTop + clientHeight === scrollHeight) {
       if (page.current < 6) {
         page.current += 1;
         getList();
