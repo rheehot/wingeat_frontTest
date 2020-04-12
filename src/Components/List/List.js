@@ -14,6 +14,7 @@ const List = ({ changeCount }) => {
   const getList = () => {
     axios.get(`${listUrl}?page=${page.current}`).then(({ data }) => setList((p) => p.concat(data)));
   };
+
   useEffect(() => {
     getList();
   }, [page]);
