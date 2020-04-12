@@ -6,20 +6,6 @@ import { connect } from 'react-redux';
 import './Header.scss';
 
 const Header = (props) => {
-  const [initcount, setInitcount] = useState(0);
-
-  useEffect(() => {
-    setInitcount(
-      localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')).length : 0,
-    );
-  }, []);
-
-  useEffect(() => {
-    if (JSON.parse(localStorage.getItem('items')).length === 0) {
-      setInitcount(0);
-    }
-  }, [initcount]);
-
   const goCart = () => {
     props.history.push('/cart');
   };
@@ -28,7 +14,7 @@ const Header = (props) => {
       <div className="header_top_wrapper">
         <div className="header_top">
           <div className="alert_circle" onClick={goCart}>
-            {props.count || initcount}
+            {props.count}
           </div>
           <span onClick={goCart}>장바구니</span>
         </div>
