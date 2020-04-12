@@ -8,7 +8,7 @@ import './List.scss';
 
 const List = ({ changeCount }) => {
   const [list, setList] = useState([]);
-  const [scroll, setScroll] = useState(null);
+  const [scroll, setScroll] = useState(false);
   const page = useRef(1);
 
   const getList = () => {
@@ -17,7 +17,7 @@ const List = ({ changeCount }) => {
   useEffect(() => {
     getList();
     return () => {
-      setScroll(null);
+      setScroll(false);
     };
   }, [page]);
 
