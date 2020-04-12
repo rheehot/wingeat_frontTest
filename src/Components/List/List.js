@@ -35,6 +35,8 @@ const List = ({ changeCount }) => {
         page.current += 1;
         getList();
         setScroll(!scroll);
+      } else if (page.current === 6) {
+        setScroll(false);
       }
     }
   };
