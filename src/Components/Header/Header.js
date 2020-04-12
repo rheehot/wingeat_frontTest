@@ -7,12 +7,15 @@ import './Header.scss';
 
 const Header = (props) => {
   useEffect(() => {
-    if (!JSON.stringify(localStorage.getItem('items')) === '[]') {
+    if (localStorage.getItem('items') === null) {
+      props.changeCount(0);
+    } else {
       props.changeCount(JSON.parse(localStorage.getItem('items')).length);
     } }, []);
   const goCart = () => {
     props.history.push('/cart');
   };
+
   return (
     <div className="header">
       <div className="header_top_wrapper">
