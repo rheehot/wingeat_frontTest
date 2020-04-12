@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { changeCount } from 'Redux/Actions';
 
 import './Header.scss';
 
 const Header = (props) => {
+  useEffect(() => {
+    if (!JSON.stringify(localStorage.getItem('items')) === '[]') {
+      props.changeCount(JSON.parse(localStorage.getItem('items')).length);
+    } }, []);
   const goCart = () => {
     props.history.push('/cart');
   };
@@ -35,4 +39,4 @@ const Header = (props) => {
 const mapStateToProps = (state) => ({
   count: state.cartCount.count,
 });
-export default withRouter(connect(mapStateToProps, {})(Header));
+export default withRouter(connect(mapStateToProps, { changeCount })(Header));

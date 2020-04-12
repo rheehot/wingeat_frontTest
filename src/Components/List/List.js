@@ -23,8 +23,7 @@ const List = ({ changeCount }) => {
     return () => {
       setScroll(false);
     };
-  },
-  [setScroll]);
+  }, [setScroll]);
 
   // 무한스크롤 구현
   const infiniteScroll = () => {
@@ -75,7 +74,7 @@ const List = ({ changeCount }) => {
           UpdateItems.push({
             id: itemId,
             name: itemName,
-            amount: ++UpdateItems[i].amount,
+            amount: UpdateItems[i].amount + 1,
             price: itemPrice,
             image: imgurl,
           });
