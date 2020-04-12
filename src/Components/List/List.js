@@ -16,10 +16,15 @@ const List = ({ changeCount }) => {
   };
   useEffect(() => {
     getList();
+  }, [page]);
+
+  useEffect(() => {
+    setScroll();
     return () => {
       setScroll(false);
     };
-  }, [page]);
+  },
+  [setScroll]);
 
   // 무한스크롤 구현
   const infiniteScroll = () => {
