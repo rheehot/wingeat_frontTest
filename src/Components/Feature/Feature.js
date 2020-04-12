@@ -39,23 +39,21 @@ const Feature = () => {
 
   return (
     <div className="slider_wrapper">
-      <div>
-        <Slider {...settings}>
-          {image.map((ele, idx) => (
-            <div key={idx}>
-              <img
-                src={`${beforeUrl}${windowInner >= PHONE ? ele.image : ele.mobileImage}`}
-                alt="feature_img"
-              />
-              <div>
-                {windowInner <= PHONE && (
-                  <span className="count_circle">{`${idx + 1}/${image.length}`}</span>
-                )}
-              </div>
+      <Slider {...settings}>
+        {image.map((ele, idx) => (
+          <div key={idx}>
+            <img
+              src={`${beforeUrl}${windowInner >= PHONE ? ele.image : ele.mobileImage}`}
+              alt="feature_img"
+            />
+            <div>
+              {windowInner <= PHONE && (
+              <span className="count_circle">{`${idx + 1}/${image.length}`}</span>
+              )}
             </div>
-          ))}
-        </Slider>
-      </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
