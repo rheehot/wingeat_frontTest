@@ -1,0 +1,72 @@
+@import "../../Style/break.scss";
+
+.list_wrapper {
+  margin-bottom: 100px;
+
+  .made_text {
+    padding: 40px 0 60px;
+
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+
+    @media #{$phone} {
+      padding: 20px 0 40px;
+
+    }
+  }
+
+  .list {
+    .list_inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .item {
+        width: 287px;
+        padding: 1rem 0.5rem 0.5rem;
+
+        @media #{$phone} {
+          width: 40vw;
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 8px;
+          cursor: pointer;
+
+        }
+
+        .item_name {
+          padding: 0.8em 0.5em 0 0.3em;
+          margin-bottom: 0.5em;
+          font-size: 1.5em;
+          word-break: keep-all;
+
+          @media #{$phone} {
+            font-weight: 600;
+          }
+
+        }
+
+        .price {
+          padding: 0.2em 0.4em;
+
+          font-weight: 700;
+          font-size: 1.5em;
+
+          @media #{$phone} {
+            font-size: 2.2em;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .loading_more {
+    text-align: center;
+    margin: 30px 0;
+  }
+}

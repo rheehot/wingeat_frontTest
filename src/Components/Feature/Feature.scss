@@ -1,0 +1,49 @@
+@import "../../Style/break.scss";
+
+.slider_wrapper {
+  position: relative;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    cursor: pointer;
+
+    @media #{$phone} {}
+  }
+
+  div {
+    position: relative;
+
+    .count_circle {
+      position: absolute;
+
+      right: 0.5rem;
+      bottom: 0.7rem;
+
+      padding: 5px 8px;
+      background: rgba(0, 0, 0, .7);
+      border-radius: 15px;
+
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 400;
+    }
+  }
+
+  .slick-dots {
+    width: auto;
+    position: absolute;
+
+    bottom: 0.5rem;
+    right: 0.5rem;
+
+    li {
+      margin: 0;
+
+      @media #{$phone} {
+        display: none;
+
+      }
+    }
+  }
+}
