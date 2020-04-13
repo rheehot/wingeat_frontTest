@@ -71,7 +71,7 @@ const List = ({ changeCount }) => {
       UpdateItems = JSON.parse(beforeItems);
 
       for (let i = 0; i < UpdateItems.length; i++) {
-        if (UpdateItems[i].id + 1 > itemId) {
+        if (UpdateItems[i].id === itemId) {
           UpdateItems.push({
             id: itemId,
             name: itemName,
