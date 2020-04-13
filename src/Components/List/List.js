@@ -38,7 +38,7 @@ const List = ({ changeCount }) => {
       document.body.scrollTop,
     ));
     const { clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight === scrollHeight) {
+    if (scrollTop + clientHeight + 1 > scrollHeight) {
       if (page.current < 6) {
         page.current += 1;
         getList();
@@ -71,7 +71,7 @@ const List = ({ changeCount }) => {
       UpdateItems = JSON.parse(beforeItems);
 
       for (let i = 0; i < UpdateItems.length; i++) {
-        if (UpdateItems[i].id === itemId) {
+        if (UpdateItems[i].id + 1 > itemId) {
           UpdateItems.push({
             id: itemId,
             name: itemName,
