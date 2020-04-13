@@ -32,7 +32,7 @@ const List = ({ changeCount }) => {
       document.documentElement.scrollHeight,
       document.body.scrollHeight,
     );
-    // scrollTop은 소수점이 발생하여 내림 적용
+    // scrollTop은 소수점이 발생하여 올림 적용
     const scrollTop = Math.ceil(Math.max(
       document.documentElement.scrollTop,
       document.body.scrollTop,
