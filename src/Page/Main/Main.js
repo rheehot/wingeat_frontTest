@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import Feature from 'Components/Feature';
 import Header from 'Components/Header';
-import List from 'Components/List';
+import Feature from './Components/Feature';
+import List from './Components/List';
 
 import './Main.scss';
 

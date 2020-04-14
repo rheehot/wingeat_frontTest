@@ -12,7 +12,7 @@ const List = ({ changeCount }) => {
   const page = useRef(1);
 
   const getList = () => {
-    axios.get(`${listUrl}?page=${page.current}`).then(({ data }) => setList((p) => p.concat(data)));
+    axios.get(`${listUrl}?page=${page.current}`).then(({ data }) => setList((prev) => prev.concat(data)));
   };
 
   useEffect(() => {
