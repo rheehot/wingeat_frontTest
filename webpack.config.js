@@ -9,6 +9,11 @@ module.exports = {
     port: 3000,
     host: 'localhost',
   },
+  resolve: {
+    alias: {
+      Style: path.resolve(__dirname, 'src/Style/'),
+    },
+  },
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'index_bundle.js',
@@ -26,10 +31,6 @@ module.exports = {
         test: /\.(scss|sass)$/i,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
