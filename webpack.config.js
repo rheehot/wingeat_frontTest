@@ -9,6 +9,10 @@ module.exports = {
     port: 3000,
     host: 'localhost',
   },
+  performance: {
+    maxEntrypointSize: 400000,
+    maxAssetSize: 1000000,
+  },
   resolve: {
     alias: {
       Style: path.resolve(__dirname, 'src/Style/'),
